@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #00CBBC;
@@ -28,7 +29,16 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
+		embedded_svc.settings.extraPrechatFormDetails = [{
+			  "label":"First Name",
+			  "transcriptFields": ["FirstName__c"]
+			},{
+			  "label":"Last Name",
+			  "transcriptFields": ["LastName__c"]
+			},{
+			  "label":"Email",
+			  "transcriptFields": ["Email__c"]
+			}];
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
@@ -44,7 +54,7 @@
 				buttonId: '5731K000000Pk8W',
 				baseLiveAgentURL: 'https://d.la2-c1cs-ia5.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'Chat_Support_Team',
-				isOfflineSupportEnabled: false
+				isOfflineSupportEnabled: true
 			}
 		);
 	};
